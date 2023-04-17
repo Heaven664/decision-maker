@@ -15,7 +15,7 @@ $(() => {
     const id = $('#body').data().id;
     //grab the voter name for the post request
     const voter = $('#vote').val();
-    console.log(sortedIds)
+    console.log(voter)
 
     //create html for submission box
     const $submissionBox = $(`

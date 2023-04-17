@@ -64,8 +64,8 @@ router.get("/:id", (req, res) => {
   voteQueries.getPollOptionInfo(id).then((data) => {
     if (!data[0]) {
       //TODO show error message
-      console.log('no data')
-      return res.send('poll does not exist')
+      console.log("no data");
+      return res.send("poll does not exist");
     }
     const templateVars = {
       pollId: id,
@@ -111,11 +111,9 @@ router.post("/:id", (req, res) => {
         console.log(err);
         return;
       }
-      console.log("Sent:" + info.response);
+      res.status(200).json({ success: true });
     });
   });
-
-  res.status(200).json({ success: true });
 });
 
 module.exports = router;
