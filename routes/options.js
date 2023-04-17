@@ -1,10 +1,12 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
-const router = express.Router();
 const { insertOption, getOptions } = require('../db/queries/create_option');
 const { deleteOption } = require('../db/queries/delete_option');
 const { getPoll } = require('../db/queries/get_poll');
 
+const router = express.Router();
+
+// Set up nodemailer
 const transporter = nodemailer.createTransport({
   service: 'hotmail',
   auth: {
@@ -13,6 +15,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// Add options to a poll
 router.get('/:id', (req, res) => {
   const pollId = req.params.id;
   getOptions(pollId)
@@ -22,9 +25,10 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// Post single option
 router.post('/', (req, res) => {
   if (!req.body.title) {
-    // todo
+    // TODO show error message
     return console.log('not ok');
   }
 
@@ -36,6 +40,7 @@ router.post('/', (req, res) => {
     .then(option => res.json(option));
 });
 
+// Complete poll and send email
 router.post('/:id', (req, res) => {
   const id = req.params.id;
   getPoll(id)
@@ -61,6 +66,7 @@ router.post('/:id', (req, res) => {
 
 });
 
+// Delete a poll option
 router.post('/delete/:id', (req, res) => {
   const optionId = req.params.id;
 
