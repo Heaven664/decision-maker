@@ -18,8 +18,12 @@ const transporter = nodemailer.createTransport({
 // Add options to a poll
 router.get('/:id', (req, res) => {
   const pollId = req.params.id;
+
   getOptions(pollId)
     .then(options => {
+      if (!options) {
+        return res.send('poll does not exist')
+      }
       const templateVars = {options, pollId}
       res.render('add_options.ejs', templateVars)
     });

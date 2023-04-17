@@ -62,9 +62,9 @@ router.get("/:id", (req, res) => {
 
   // Get poll data from db
   voteQueries.getPollOptionInfo(id).then((data) => {
-    if (!data[0]) {
+
+    if (!data || !data[0]) {
       //TODO show error message
-      console.log("no data");
       return res.send("poll does not exist");
     }
     const templateVars = {
