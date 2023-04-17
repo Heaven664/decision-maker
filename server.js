@@ -32,8 +32,9 @@ const optionsRoutes = require('./routes/options');
 app.use('/polls', pollsRoutes);
 app.use('/options', optionsRoutes);
 
+// Homepage 
 app.get('/', (req, res) => {
-  res.redirect('/polls');
+  res.render("index");
 });
 
 app.listen(PORT, () => {

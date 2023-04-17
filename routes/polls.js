@@ -15,11 +15,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Homepage
-router.get("/", (req, res) => {
-  res.render("index");
-});
-
 // Create new poll
 router.get("/new", (req, res) => {
   res.render("create_poll");

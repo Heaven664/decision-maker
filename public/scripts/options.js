@@ -68,7 +68,7 @@ $(() => {
           <p>Links successfully sent to <b>${email}</b></p>
         </header>
         <footer style="display:flex; justify-content: space-evenly; margin-bottom: 0;">
-        <a href="/polls"><button>Homepage</button></a>
+        <a href="/"><button>Homepage</button></a>
         <a href="/polls/new"><button>New Poll</button></a>
         </footer>`;
         $main.empty();

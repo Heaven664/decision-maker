@@ -24,7 +24,7 @@ $(() => {
       <i class="fa-solid fa-check-to-slot"></i>
       <p>Your submission has been received</p>
       <div id="button-box">
-        <a href="/polls"><button>Home</button></a>
+        <a href="/"><button>Home</button></a>
         <a href="/polls/new"><button>New Poll</button></a>
       </div>
     </div>`)
