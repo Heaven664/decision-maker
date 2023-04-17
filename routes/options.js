@@ -1,8 +1,8 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
-const { insertOption, getOptions } = require('../db/queries/create_option');
-const { deleteOption } = require('../db/queries/delete_option');
 const { getPoll } = require('../db/queries/get_poll');
+const { deleteOption } = require('../db/queries/delete_option');
+const { insertOption, getOptions } = require('../db/queries/create_option');
 
 const router = express.Router();
 

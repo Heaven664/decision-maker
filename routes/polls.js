@@ -1,8 +1,8 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const voteQueries = require("../db/queries/vote");
-const { createPoll, addLinks } = require("../db/queries/create_poll");
 const resultQueries = require("../db/queries/results");
+const { createPoll, addLinks } = require("../db/queries/create_poll");
 
 const router = express.Router();
 
@@ -62,6 +62,11 @@ router.get("/:id", (req, res) => {
 
   // Get poll data from db
   voteQueries.getPollOptionInfo(id).then((data) => {
+    if (!data[0]) {
+      //TODO show error message
+      console.log('no data')
+      return res.send('poll does not exist')
+    }
     const templateVars = {
       pollId: id,
       pollTitle: data[0]["ptitle"],
