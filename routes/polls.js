@@ -46,7 +46,10 @@ router.get("/:id/results", (req, res) => {
     const templateVars = {
       results: data,
     };
-
+    if (!data) {
+      // TODO add view
+      return res.send("Invalid poll ID")
+    }
     if (data.length === 0) {
       // TODO add view
       return res.send("Nobody vote on this poll yet!");
