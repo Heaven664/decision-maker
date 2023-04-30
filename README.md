@@ -3,10 +3,10 @@ Decision Maker
 
 ## Project Description
 ___
-Our web application features multiple pages, some of which take advantage of AJAX technology for seamless communication with the backend.  
-Our application is designed to simplify the decision-making process. With just a few clicks, users can create a new poll and specify their options. 
+***Decision Maker*** features multiple pages, some of which take advantage of AJAX technology for seamless communication with the backend.  
+This application is designed to simplify the decision-making process. With just a few clicks, users can create a new poll and specify their options. 
 The application then generates two links, one for sharing with potential voters and the other for checking the current poll results. 
-All tedious calculations are handled by our application, leaving you with more time to focus on other important matters.  
+All tedious calculations are handled by the application, leaving you with more time to focus on other important matters.  
 Whenever someone votes on your poll, our application sends you a notification via email. This ensures that you are always up-to-date on the latest poll results.
 ___
 
